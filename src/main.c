@@ -8,7 +8,8 @@
   ******************************************************************************
 */
 
-
+#include <stdio.h>
+#include <stdint.h>
 #include "stm32f4xx.h"
 			
 
@@ -23,9 +24,16 @@ TaskHandle_t xTaskHandle2 = NULL;
 void vTask1_handler (void *params);
 void vTask2_handler (void *params);
 
+//special printf statement, MCU host specific,"Semihosting" debugging
+extern void initialise_monitor_handles();
 
 int main(void)
 {
+	// enable special printf statement, MCU host specific,"Semihosting" debugging
+	initialise_monitor_handles();
+
+	printf ("This is semihosting debug print statement...\n");
+
 	//1. Reset the RCC clock configuration to the default reset state.
 	//HSI ON, PLL OFF, HSE OFF, system clock = 16MHz, cpu_clock = 16MHz
 	RCC_DeInit();
@@ -53,6 +61,8 @@ int main(void)
 				&xTaskHandle2		//	TaskHandle_t * const pxCreatedTask )
 				);
 
+		// 4. start the scheduler
+		vTaskStartScheduler();
 
 
 	for(;;);
@@ -61,11 +71,18 @@ int main(void)
 // handler of the task 1
 void vTask1_handler (void *params)
 {
-	while(1);  // the task handler should never return so we have a while(1) here.
+	while(1){}
+		printf("from task 1\n");
+
+	;  // the task handler should never return so we have a while(1) here.
 }
 
 // handler of the task 2
 void vTask2_handler (void *params)
 {
-	while(1);
+	while(1){
+
+		printf("from task 2\n");
+
+	};
 }

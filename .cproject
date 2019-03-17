@@ -52,6 +52,7 @@
 								<option id="gnu.cpp.compiler.option.debugging.level.618616503" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 							</tool>
 							<tool id="fr.ac6.managedbuild.tool.gnu.cross.c.linker.1841210128" name="MCU GCC Linker" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.linker">
+								<option id="gnu.c.link.option.ldflags.1522370306" name="Linker flags" superClass="gnu.c.link.option.ldflags" useByScannerDiscovery="false" value="-specs=rdimon.specs -lc -lrdimon" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.c.linker.input.1757123223" superClass="cdt.managedbuild.tool.gnu.c.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
@@ -71,25 +72,20 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<folderInfo id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.4428771.422007916" name="/" resourcePath="Third-Party">
-						<toolChain id="fr.ac6.managedbuild.toolchain.gnu.cross.exe.debug.888157956" name="Ac6 STM32 MCU GCC" superClass="fr.ac6.managedbuild.toolchain.gnu.cross.exe.debug" unusedChildren="">
-							<option id="fr.ac6.managedbuild.option.gnu.cross.mcu.999148905.446027551" name="Mcu" superClass="fr.ac6.managedbuild.option.gnu.cross.mcu.999148905"/>
-							<option id="fr.ac6.managedbuild.option.gnu.cross.fpu.1912265280.1246720795" name="Floating point hardware" superClass="fr.ac6.managedbuild.option.gnu.cross.fpu.1912265280"/>
-							<option id="fr.ac6.managedbuild.option.gnu.cross.floatabi.1929032968.1700811289" name="Floating-point ABI" superClass="fr.ac6.managedbuild.option.gnu.cross.floatabi.1929032968"/>
-							<option id="fr.ac6.managedbuild.option.gnu.cross.board.963436184.526875406" name="Board" superClass="fr.ac6.managedbuild.option.gnu.cross.board.963436184"/>
-							<tool id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.822290232" name="MCU GCC Compiler" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.462251032"/>
-							<tool id="fr.ac6.managedbuild.tool.gnu.cross.cpp.compiler.696173168" name="MCU G++ Compiler" superClass="fr.ac6.managedbuild.tool.gnu.cross.cpp.compiler.1268703012"/>
-							<tool id="fr.ac6.managedbuild.tool.gnu.cross.c.linker.659995979" name="MCU GCC Linker" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.linker.1841210128"/>
-							<tool id="fr.ac6.managedbuild.tool.gnu.cross.cpp.linker.64887617" name="MCU G++ Linker" superClass="fr.ac6.managedbuild.tool.gnu.cross.cpp.linker.493020660"/>
-							<tool id="fr.ac6.managedbuild.tool.gnu.archiver.873675287" name="MCU GCC Archiver" superClass="fr.ac6.managedbuild.tool.gnu.archiver.958689604"/>
-							<tool id="fr.ac6.managedbuild.tool.gnu.cross.assembler.863271678" name="MCU GCC Assembler" superClass="fr.ac6.managedbuild.tool.gnu.cross.assembler.508460632"/>
-						</toolChain>
-					</folderInfo>
+					<fileInfo id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.4428771.887792730" name="syscalls.c" rcbsApplicability="disable" resourcePath="src/syscalls.c" toolsToInvoke="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.462251032.644176936">
+						<tool id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.462251032.644176936" name="MCU GCC Compiler" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.462251032"/>
+						<tool customBuildStep="true" id="org.eclipse.cdt.managedbuilder.ui.rcbs.1314710542" name="Resource Custom Build Step">
+							<inputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.inputtype.924965835" name="Resource Custom Build Step Input Type">
+								<additionalInput kind="additionalinputdependency" paths=""/>
+							</inputType>
+							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.49500018" name="Resource Custom Build Step Output Type"/>
+						</tool>
+					</fileInfo>
 					<sourceEntries>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="StdPeriph_Driver"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Third-Party"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="config"/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry excluding="syscalls.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="startup"/>
 					</sourceEntries>
 				</configuration>
